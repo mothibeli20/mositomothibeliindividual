@@ -1,0 +1,870 @@
+Creating table person
+CREATE TABLE person (
+  Person_ID int NOT NULL,
+  Name varchar(100) DEFAULT NULL,
+  Address varchar(255) DEFAULT NULL,
+  Phone varchar(20) DEFAULT NULL,
+  Birth_Date date DEFAULT NULL,
+  IsActive tinyint(1) DEFAULT 1,
+  PRIMARY KEY (Person_ID)
+);
+
+Data insertion
+INSERT INTO person (Person_ID, Name, Address, Phone, Birth_Date, IsActive) VALUES
+(1, 'Mothibeli', 'New Address', '57700000', '1995-01-15', 1),
+(2, 'Palesa', 'Maputsoe350', '56567890', '1992-02-20', 1),
+(3, 'Thabang', 'Hleoheng18', '58234567', '1998-03-10', 0),
+(4, 'Mokopu', 'Moselimyane16', '56123456', '1991-04-30', 1),
+(5, 'Mphasane', 'Mafeteng400', '57789012', '2000-05-05', 1),
+(6, 'Moelo', 'Thaba-Tseka22', '56456789', '1999-06-15', 1),
+(7, 'Moeketsi', 'Teyateyaneng150', '54567890', '1997-07-25', 1),
+(8, 'Bokang', 'Mokhotlong7', '57512345', '1993-08-20', 1),
+(9, 'Lerato', 'Qachas Nek8', '57345678', '1996-09-14', 1),
+(10, 'Dineo', 'Tsoelike Ave.12', '58654321', '2001-10-29', 1),
+(11, 'Lesedi', 'Matala Lane12', '59876543', '1994-11-12', 1),
+(12, 'Molefi', 'Berea3', '55223344', '1990-12-08', 1),
+(13, 'Tshepo', 'Leribe Complex11', '57789065', '1998-03-18', 1),
+(14, 'Ntsiki', 'Pitso Ground2', '55567890', '1999-04-05', 1),
+(15, 'Teboho', 'Mohale''s Hoek4', '56456767', '1997-05-22', 1),
+(16, 'Kelebone', 'Hlotse345', '58234589', '1996-06-30', 1);
+mysql> select * from person;
++-----------+-----------+------------------+----------+------------+----------+
+| Person_ID | Name      | Address          | Phone    | Birth_Date | IsActive |
++-----------+-----------+------------------+----------+------------+----------+
+|         1 | Mothibeli | New Address      | 57700000 | 1995-01-15 |        1 |
+|         2 | Palesa    | Maputsoe350      | 56567890 | 1992-02-20 |        1 |
+|         3 | Thabang   | Hleoheng18       | 58234567 | 1998-03-10 |        0 |
+|         4 | Mokopu    | Moselimyane16    | 56123456 | 1991-04-30 |        1 |
+|         5 | Mphasane  | Mafeteng400      | 57789012 | 2000-05-05 |        1 |
+|         6 | Moelo     | Thaba-Tseka22    | 56456789 | 1999-06-15 |        1 |
+|         7 | Moeketsi  | Teyateyaneng150  | 54567890 | 1997-07-25 |        1 |
+|         8 | Bokang    | Mokhotlong7      | 57512345 | 1993-08-20 |        1 |
+|         9 | Lerato    | Qachas Nek8      | 57345678 | 1996-09-14 |        1 |
+|        10 | Dineo     | Tsoelike Ave.12  | 58654321 | 2001-10-29 |        1 |
+|        11 | Lesedi    | Matala Lane12    | 59876543 | 1994-11-12 |        1 |
+|        12 | Molefi    | Berea3           | 55223344 | 1990-12-08 |        1 |
+|        13 | Tshepo    | Leribe Complex11 | 57789065 | 1998-03-18 |        1 |
+|        14 | Ntsiki    | Pitso Ground2    | 55567890 | 1999-04-05 |        1 |
+|        15 | Teboho    | Mohale's Hoek4   | 56456767 | 1997-05-22 |        1 |
+|        16 | Kelebone  | Hlotse345        | 58234589 | 1996-06-30 |        1 |
++-----------+-----------+------------------+----------+------------+----------+
+16 rows in set (0.07 sec)
+
+Creating table Organization
+CREATE TABLE organization (
+  Org_ID int NOT NULL,
+  Name varchar(100) DEFAULT NULL,
+  Address varchar(255) DEFAULT NULL,
+  Phone varchar(20) DEFAULT NULL,
+  Budget_Number varchar(50) DEFAULT NULL,
+  PRIMARY KEY (Org_ID)
+);
+
+Data Insertion
+INSERT INTO organization (Org_ID, Name, Address, Phone, Budget_Number) VALUES
+(11, 'Updated Name', 'Updated Address', '12345678', '100000'),
+(12, 'Katleho', 'Ha Tsolo', '65432109', '75000'),
+(13, 'Thuto', 'Qoaling', '63456789', '60000'),
+(14, 'Pele-Pele', 'Roma', '59876543', '62000'),
+(15, 'Bophelo', 'Ha Leqele', '57512345', '90000'),
+(16, 'Leseli', 'Mafeteng', '66123456', '85000'),
+(17, 'Tshepo', 'Teyateyaneng', '68345678', '71000'),
+(18, 'Mahlaseli', 'Mohale''s Hoek', '54567890', '53000'),
+(19, 'Tsoelopele', 'Butha-Buthe', '59789012', '68000'),
+(20, 'Khanya', 'Qacha''s Nek', '56801234', '48000'),
+(21, 'Bohlale', 'Hlotse', '56123489', '82000'),
+(22, 'Lerato', 'Mokhotlong', '57765432', '90000'),
+(23, 'Khotso', 'Thaba-Tseka', '56456767', '54000'),
+(24, 'Pheello', 'Maputsoe', '53234567', '56000'),
+(25, 'Teboho', 'Pitseng', '54567812', '67000'),
+(26, 'Ntsu', 'Ha Ramokoena', '57412345', '71000');
+mysql> select * from organization;
++--------+--------------+-----------------+----------+---------------+
+| Org_ID | Name         | Address         | Phone    | Budget_Number |
++--------+--------------+-----------------+----------+---------------+
+|     11 | Updated Name | Updated Address | 12345678 | 100000        |
+|     12 | Katleho      | Ha Tsolo        | 65432109 | 75000         |
+|     13 | Thuto        | Qoaling         | 63456789 | 60000         |
+|     14 | Pele-Pele    | Roma            | 59876543 | 62000         |
+|     15 | Bophelo      | Ha Leqele       | 57512345 | 90000         |
+|     16 | Leseli       | Mafeteng        | 66123456 | 85000         |
+|     17 | Tshepo       | Teyateyaneng    | 68345678 | 71000         |
+|     18 | Mahlaseli    | Mohale?s Hoek   | 54567890 | 53000         |
+|     19 | Tsoelopele   | Butha-Buthe     | 59789012 | 68000         |
+|     20 | Khanya       | Qacha?s Nek     | 56801234 | 48000         |
+|     21 | Bohlale      | Hlotse          | 56123489 | 82000         |
+|     22 | Lerato       | Mokhotlong      | 57765432 | 90000         |
+|     23 | Khotso       | Thaba-Tseka     | 56456767 | 54000         |
+|     24 | Pheello      | Maputsoe        | 53234567 | 56000         |
+|     25 | Teboho       | Pitseng         | 54567812 | 67000         |
+|     26 | Ntsu         | Ha Ramokoena    | 57412345 | 71000         |
++--------+--------------+-----------------+----------+---------------+
+16 rows in set (0.02 sec)
+
+Create Table employment
+CREATE TABLE employment (
+  Employment_ID int NOT NULL,
+  Person_ID int DEFAULT NULL,
+  Org_ID int DEFAULT NULL,
+  Employment_Date date DEFAULT NULL,
+  Termination_Date date DEFAULT NULL,
+  Bonus decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (Employment_ID),
+  KEY Org_ID (Org_ID),
+  KEY employment_ibfk_1 (Person_ID),
+  CONSTRAINT employment_ibfk_1 FOREIGN KEY (Person_ID) REFERENCES person (Person_ID) ON DELETE CASCADE,
+  CONSTRAINT employment_ibfk_2 FOREIGN KEY (Org_ID) REFERENCES organization (Org_ID)
+);
+
+Data inserton
+INSERT INTO employment (Employment_ID, Person_ID, Org_ID, Employment_Date, Termination_Date, Bonus) VALUES
+(1, 1, 11, '2020-01-15', '2023-06-30', 5000.00),
+(2, 2, 12, '2018-05-20', '2022-12-15', 7500.00),
+(3, 3, 13, '2019-03-10', NULL, 6200.00),
+(4, 4, 14, '2021-07-01', NULL, 8000.00),
+(5, 5, 15, '2017-09-25', '2021-10-05', 9000.00),
+(6, 6, 16, '2020-02-12', NULL, 10000.00),
+(7, 7, 17, '2015-06-18', '2019-08-30', 7200.00),
+(8, 8, 18, '2016-11-05', NULL, 5300.00),
+(9, 9, 19, '2019-04-20', '2023-02-28', 6800.00),
+(10, 10, 20, '2021-08-15', NULL, 7400.00),
+(11, 11, 21, '2018-01-10', '2022-07-22', 8200.00),
+(12, 12, 22, '2016-12-01', NULL, 9100.00),
+(13, 13, 23, '2017-05-08', '2020-09-14', 5400.00),
+(14, 14, 24, '2019-09-30', NULL, 5800.00),
+(15, 15, 25, '2020-06-25', NULL, 6000.00),
+(16, 16, 26, '2018-04-14', '2023-01-05', 7100.00);
+mysql> select * from employment;
++---------------+-----------+--------+-----------------+------------------+----------+
+| Employment_ID | Person_ID | Org_ID | Employment_Date | Termination_Date | Bonus    |
++---------------+-----------+--------+-----------------+------------------+----------+
+|             1 |         1 |     11 | 2020-01-15      | 2023-06-30       |  5000.00 |
+|             2 |         2 |     12 | 2018-05-20      | 2022-12-15       |  7500.00 |
+|             3 |         3 |     13 | 2019-03-10      | NULL             |  6200.00 |
+|             4 |         4 |     14 | 2021-07-01      | NULL             |  8000.00 |
+|             5 |         5 |     15 | 2017-09-25      | 2021-10-05       |  9000.00 |
+|             6 |         6 |     16 | 2020-02-12      | NULL             | 10000.00 |
+|             7 |         7 |     17 | 2015-06-18      | 2019-08-30       |  7200.00 |
+|             8 |         8 |     18 | 2016-11-05      | NULL             |  5300.00 |
+|             9 |         9 |     19 | 2019-04-20      | 2023-02-28       |  6800.00 |
+|            10 |        10 |     20 | 2021-08-15      | NULL             |  7400.00 |
+|            11 |        11 |     21 | 2018-01-10      | 2022-07-22       |  8200.00 |
+|            12 |        12 |     22 | 2016-12-01      | NULL             |  9100.00 |
+|            13 |        13 |     23 | 2017-05-08      | 2020-09-14       |  5400.00 |
+|            14 |        14 |     24 | 2019-09-30      | NULL             |  5800.00 |
+|            15 |        15 |     25 | 2020-06-25      | NULL             |  6000.00 |
+|            16 |        16 |     26 | 2018-04-14      | 2023-01-05       |  7100.00 |
++---------------+-----------+--------+-----------------+------------------+----------+
+
+Create table position
+CREATE TABLE position (
+  Position_ID INT NOT NULL,
+  Title VARCHAR(100) DEFAULT NULL,
+  Org_ID INT DEFAULT NULL,
+  PRIMARY KEY (Position_ID),
+  KEY Org_ID (Org_ID),
+  CONSTRAINT position_ibfk_1 FOREIGN KEY (Org_ID) REFERENCES organization (Org_ID)
+);
+
+Data insertion
+INSERT INTO position (Position_ID, Title, Org_ID) VALUES
+(1, 'Updated Mookameli', 11),
+(2, 'Motlatsi Mookameli', 12),
+(3, 'Motsamaisi', 13),
+(4, 'Mothusi', 14),
+(5, 'Setsebi sa Lichelete', 15),
+(6, 'Mohlahlobi', 16),
+(7, 'Setsebi sa Marangrang', 17),
+(8, 'Motsamaisi oa Morero', 18),
+(9, 'Setsebi sa Thekenoloji', 19),
+(10, 'Mofani oa Lit?ebeletso', 20),
+(11, 'Moqapi oa Software', 21),
+(12, 'Mokhanni', 22),
+(13, 'Mohlokomeli', 23),
+(14, 'Tsebi ea Lipapali', 24),
+(15, 'Motataisi', 25),
+(16, 'Moetsi oa Litheo', 26);
+mysql> select * from position;
++-------------+------------------------+--------+
+| Position_ID | Title                  | Org_ID |
++-------------+------------------------+--------+
+|           1 | Updated Mookameli      |     11 |
+|           2 | Motlatsi Mookameli     |     12 |
+|           3 | Motsamaisi             |     13 |
+|           4 | Mothusi                |     14 |
+|           5 | Setsebi sa Lichelete   |     15 |
+|           6 | Mohlahlobi             |     16 |
+|           7 | Setsebi sa Marangrang  |     17 |
+|           8 | Motsamaisi oa Morero   |     18 |
+|           9 | Setsebi sa Thekenoloji |     19 |
+|          10 | Mofani oa Lit?ebeletso |     20 |
+|          11 | Moqapi oa Software     |     21 |
+|          12 | Mokhanni               |     22 |
+|          13 | Mohlokomeli            |     23 |
+|          14 | Tsebi ea Lipapali      |     24 |
+|          15 | Motataisi              |     25 |
+|          16 | Moetsi oa Litheo       |     26 |
++-------------+------------------------+--------+
+16 rows in set (0.01 sec)
+
+Create table job_history
+CREATE TABLE job_history (
+  JobHistory_ID int NOT NULL,
+  Person_ID int DEFAULT NULL,
+  Position_ID int DEFAULT NULL,
+  Start_Date date DEFAULT NULL,
+  End_Date date DEFAULT NULL,
+  Salary decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (JobHistory_ID),
+  KEY Person_ID (Person_ID),
+  KEY Position_ID (Position_ID),
+  CONSTRAINT job_history_ibfk_1 FOREIGN KEY (Person_ID) REFERENCES person (Person_ID),
+  CONSTRAINT job_history_ibfk_2 FOREIGN KEY (Position_ID) REFERENCES position (Position_ID)
+);
+
+Data insertion
+INSERT INTO job_history (JobHistory_ID, Person_ID, Position_ID, Start_Date, End_Date, Salary) VALUES
+(3, 3, 3, '2021-04-20', '2023-01-30', 60000.00),
+(4, 4, 4, '2018-06-10', '2022-06-10', 55000.00),
+(5, 5, 5, '2020-05-10', '2022-10-01', 70000.00),
+(6, 6, 6, '2019-08-05', '2021-11-30', 80000.00),
+(7, 7, 7, '2022-02-01', '2023-02-01', 85000.00),
+(8, 8, 8, '2020-07-01', '2022-06-30', 62000.00),
+(9, 9, 9, '2017-11-25', '2021-10-20', 73000.00),
+(10, 10, 10, '2021-06-15', '2023-06-15', 75000.00),
+(11, 11, 11, '2020-02-10', '2023-02-10', 78000.00),
+(12, 12, 12, '2021-01-01', '2023-12-31', 85000.00),
+(13, 13, 13, '2020-08-12', '2022-12-31', 92000.00),
+(14, 14, 14, '2019-04-30', '2021-05-15', 80000.00),
+(15, 15, 15, '2020-11-25', '2022-11-25', 90000.00),
+(16, 16, 16, '2019-10-15', '2022-05-01', 88000.00);
+mysql> select * from job_history;
++---------------+-----------+-------------+------------+------------+----------+
+| JobHistory_ID | Person_ID | Position_ID | Start_Date | End_Date   | Salary   |
++---------------+-----------+-------------+------------+------------+----------+
+|             3 |         3 |           3 | 2021-04-20 | 2023-01-30 | 60000.00 |
+|             4 |         4 |           4 | 2018-06-10 | 2022-06-10 | 55000.00 |
+|             5 |         5 |           5 | 2020-05-10 | 2022-10-01 | 70000.00 |
+|             6 |         6 |           6 | 2019-08-05 | 2021-11-30 | 80000.00 |
+|             7 |         7 |           7 | 2022-02-01 | 2023-02-01 | 85000.00 |
+|             8 |         8 |           8 | 2020-07-01 | 2022-06-30 | 62000.00 |
+|             9 |         9 |           9 | 2017-11-25 | 2021-10-20 | 73000.00 |
+|            10 |        10 |          10 | 2021-06-15 | 2023-06-15 | 75000.00 |
+|            11 |        11 |          11 | 2020-02-10 | 2023-02-10 | 78000.00 |
+|            12 |        12 |          12 | 2021-01-01 | 2023-12-31 | 85000.00 |
+|            13 |        13 |          13 | 2020-08-12 | 2022-12-31 | 92000.00 |
+|            14 |        14 |          14 | 2019-04-30 | 2021-05-15 | 80000.00 |
+|            15 |        15 |          15 | 2020-11-25 | 2022-11-25 | 90000.00 |
+|            16 |        16 |          16 | 2019-10-15 | 2022-05-01 | 88000.00 |
++---------------+-----------+-------------+------------+------------+----------+
+14 rows in set (0.01 sec)
+
+Create table employment_type
+CREATE TABLE employment_type (
+  EmploymentType_ID int NOT NULL AUTO_INCREMENT,
+  Employment_ID int DEFAULT NULL,
+  Type varchar(50) DEFAULT NULL,
+  Extra_Bonus decimal(10,2) DEFAULT NULL,
+  Extra_Hours int DEFAULT NULL,
+  PRIMARY KEY (EmploymentType_ID),
+  KEY Employment_ID (Employment_ID),
+  CONSTRAINT employment_type_ibfk_1 FOREIGN KEY (Employment_ID) REFERENCES employment (Employment_ID)
+);
+
+Data insertion
+INSERT INTO employment_type (EmploymentType_ID, Employment_ID, Type, Extra_Bonus, Extra_Hours) VALUES
+(1, 1, 'Permanent', 5000.00, NULL),
+(2, 2, 'Part-time', NULL, 20),
+(3, 3, 'Permanent', 6000.00, NULL),
+(4, 4, 'Part-time', NULL, 15),
+(5, 5, 'Permanent', 7000.00, NULL),
+(6, 6, 'Permanent', 8000.00, NULL),
+(7, 7, 'Part-time', NULL, 25),
+(8, 8, 'Permanent', 5500.00, NULL),
+(9, 9, 'Permanent', 6200.00, NULL),
+(10, 10, 'Part-time', NULL, 18),
+(11, 11, 'Permanent', 7500.00, NULL),
+(12, 12, 'Permanent', 8500.00, NULL),
+(13, 13, 'Part-time', NULL, 30),
+(14, 14, 'Permanent', 7200.00, NULL),
+(15, 15, 'Part-time', NULL, 22),
+(16, 16, 'Permanent', 9000.00, NULL),
+(18, 15, 'Temporary', 3000.00, 10),
+(19, 14, 'permanent', 3000.00, 10);
+mysql> select * from employment_type;
++-------------------+---------------+-----------+-------------+-------------+
+| EmploymentType_ID | Employment_ID | Type      | Extra_Bonus | Extra_Hours |
++-------------------+---------------+-----------+-------------+-------------+
+|                 1 |             1 | Permanent |     5000.00 |        NULL |
+|                 2 |             2 | Part-time |        NULL |          20 |
+|                 3 |             3 | Permanent |     6000.00 |        NULL |
+|                 4 |             4 | Part-time |        NULL |          15 |
+|                 5 |             5 | Permanent |     7000.00 |        NULL |
+|                 6 |             6 | Permanent |     8000.00 |        NULL |
+|                 7 |             7 | Part-time |        NULL |          25 |
+|                 8 |             8 | Permanent |     5500.00 |        NULL |
+|                 9 |             9 | Permanent |     6200.00 |        NULL |
+|                10 |            10 | Part-time |        NULL |          18 |
+|                11 |            11 | Permanent |     7500.00 |        NULL |
+|                12 |            12 | Permanent |     8500.00 |        NULL |
+|                13 |            13 | Part-time |        NULL |          30 |
+|                14 |            14 | Permanent |     7200.00 |        NULL |
+|                15 |            15 | Part-time |        NULL |          22 |
+|                16 |            16 | Permanent |     9000.00 |        NULL |
+|                18 |            15 | Temporary |     3000.00 |          10 |
+|                19 |            14 | permanent |     3000.00 |          10 |
++-------------------+---------------+-----------+-------------+-------------+
+Views
+
+mysql> CREATE VIEW Active_Employees AS
+    -> SELECT Employment_ID, Person_ID, Org_ID, Employment_Date, Bonus
+    -> FROM employment
+    -> WHERE Termination_Date IS NULL;
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> CREATE VIEW High_Bonus_Employees AS
+    -> SELECT Employment_ID, Person_ID, Org_ID, Employment_Date, Termination_Date, Bonus
+    -> FROM employment
+    -> WHERE Bonus > 7000;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from active_employees;
++---------------+-----------+--------+-----------------+----------+
+| Employment_ID | Person_ID | Org_ID | Employment_Date | Bonus    |
++---------------+-----------+--------+-----------------+----------+
+|             3 |         3 |     13 | 2019-03-10      |  6200.00 |
+|             4 |         4 |     14 | 2021-07-01      |  8000.00 |
+|             6 |         6 |     16 | 2020-02-12      | 10000.00 |
+|             8 |         8 |     18 | 2016-11-05      |  5300.00 |
+|            10 |        10 |     20 | 2021-08-15      |  7400.00 |
+|            12 |        12 |     22 | 2016-12-01      |  9100.00 |
+|            14 |        14 |     24 | 2019-09-30      |  5800.00 |
+|            15 |        15 |     25 | 2020-06-25      |  6000.00 |
++---------------+-----------+--------+-----------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> select * from high_bonus_employees;
++---------------+-----------+--------+-----------------+------------------+----------+
+| Employment_ID | Person_ID | Org_ID | Employment_Date | Termination_Date | Bonus    |
++---------------+-----------+--------+-----------------+------------------+----------+
+|             2 |         2 |     12 | 2018-05-20      | 2022-12-15       |  7500.00 |
+|             4 |         4 |     14 | 2021-07-01      | NULL             |  8000.00 |
+|             5 |         5 |     15 | 2017-09-25      | 2021-10-05       |  9000.00 |
+|             6 |         6 |     16 | 2020-02-12      | NULL             | 10000.00 |
+|             7 |         7 |     17 | 2015-06-18      | 2019-08-30       |  7200.00 |
+|            10 |        10 |     20 | 2021-08-15      | NULL             |  7400.00 |
+|            11 |        11 |     21 | 2018-01-10      | 2022-07-22       |  8200.00 |
+|            12 |        12 |     22 | 2016-12-01      | NULL             |  9100.00 |
+|            16 |        16 |     26 | 2018-04-14      | 2023-01-05       |  7100.00 |
++---------------+-----------+--------+-----------------+------------------+----------+
+
+
+mysql> CREATE VIEW High_Org_Positions AS
+    -> SELECT Position_ID, Title, Org_ID
+    -> FROM position
+    -> WHERE Org_ID > 15;
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> CREATE VIEW Expert_Positions AS
+    -> SELECT Position_ID, Title, Org_ID
+    -> FROM position
+    -> WHERE Title LIKE '%Setsebi%';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from high_org_positions;
++-------------+------------------------+--------+
+| Position_ID | Title                  | Org_ID |
++-------------+------------------------+--------+
+|           6 | Mohlahlobi             |     16 |
+|           7 | Setsebi sa Marangrang  |     17 |
+|           8 | Motsamaisi oa Morero   |     18 |
+|           9 | Setsebi sa Thekenoloji |     19 |
+|          10 | Mofani oa Lit?ebeletso |     20 |
+|          11 | Moqapi oa Software     |     21 |
+|          12 | Mokhanni               |     22 |
+|          13 | Mohlokomeli            |     23 |
+|          14 | Tsebi ea Lipapali      |     24 |
+|          15 | Motataisi              |     25 |
+|          16 | Moetsi oa Litheo       |     26 |
++-------------+------------------------+--------+
+11 rows in set (0.00 sec)
+
+mysql> select * from expert_positions;
++-------------+------------------------+--------+
+| Position_ID | Title                  | Org_ID |
++-------------+------------------------+--------+
+|           5 | Setsebi sa Lichelete   |     15 |
+|           7 | Setsebi sa Marangrang  |     17 |
+|           9 | Setsebi sa Thekenoloji |     19 |
++-------------+------------------------+--------+
+3 rows in set (0.01 sec)
+
+
+mysql> CREATE VIEW Active_Jobs AS
+    -> SELECT JobHistory_ID, Person_ID, Position_ID, Start_Date, Salary
+    -> FROM job_history
+    -> WHERE End_Date IS NULL;
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> CREATE VIEW High_Salary_Jobs AS
+    -> SELECT JobHistory_ID, Person_ID, Position_ID, Start_Date, End_Date, Salary
+    -> FROM job_history
+    -> WHERE Salary > 80000;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from active_jobs;
++---------------+-----------+-------------+------------+------------+----------+
+| JobHistory_ID | Person_ID | Position_ID | Start_Date | End_Date   | Salary   |
++---------------+-----------+-------------+------------+------------+----------+
+|            10 |        10 |          10 | 2021-06-15 | 2023-06-15 | 75000.00 |
+|            12 |        12 |          12 | 2021-01-01 | 2023-12-31 | 85000.00 |
++---------------+-----------+-------------+------------+------------+----------+
+
+
+mysql> select * from high_salary_jobs;
++---------------+-----------+-------------+------------+------------+----------+
+| JobHistory_ID | Person_ID | Position_ID | Start_Date | End_Date   | Salary   |
++---------------+-----------+-------------+------------+------------+----------+
+|             7 |         7 |           7 | 2022-02-01 | 2023-02-01 | 85000.00 |
+|            12 |        12 |          12 | 2021-01-01 | 2023-12-31 | 85000.00 |
+|            13 |        13 |          13 | 2020-08-12 | 2022-12-31 | 92000.00 |
+|            15 |        15 |          15 | 2020-11-25 | 2022-11-25 | 90000.00 |
+|            16 |        16 |          16 | 2019-10-15 | 2022-05-01 | 88000.00 |
++---------------+-----------+-------------+------------+------------+----------+
+5 rows in set (0.00 sec)
+
+
+mysql> CREATE OR REPLACE VIEW Active_Jobs AS
+    -> SELECT JobHistory_ID, Person_ID, Position_ID, Start_Date, End_Date, Salary
+    -> FROM job_history
+    -> WHERE End_Date >= DATE_SUB(CURDATE(), INTERVAL 2 YEAR);
+Query OK, 0 rows affected (0.02 sec)
+mysql> select * from active_jobs;
++---------------+-----------+-------------+------------+------------+----------+
+| JobHistory_ID | Person_ID | Position_ID | Start_Date | End_Date   | Salary   |
++---------------+-----------+-------------+------------+------------+----------+
+|            10 |        10 |          10 | 2021-06-15 | 2023-06-15 | 75000.00 |
+|            12 |        12 |          12 | 2021-01-01 | 2023-12-31 | 85000.00 |
++---------------+-----------+-------------+------------+------------+----------+
+
+
+
+mysql> CREATE VIEW Permanent_Employees AS
+    -> SELECT * FROM employment_type
+    -> WHERE Type = 'Permanent';
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> CREATE VIEW Employment_Less_Than_10 AS
+    -> SELECT * FROM employment_type
+    -> WHERE EmploymentType_ID < 10;
+Query OK, 0 rows affected (0.01 sec)
+mysql> select * from permanent_employees;
++-------------------+---------------+-----------+-------------+-------------+
+| EmploymentType_ID | Employment_ID | Type      | Extra_Bonus | Extra_Hours |
++-------------------+---------------+-----------+-------------+-------------+
+|                 1 |             1 | Permanent |     5000.00 |        NULL |
+|                 3 |             3 | Permanent |     6000.00 |        NULL |
+|                 5 |             5 | Permanent |     7000.00 |        NULL |
+|                 6 |             6 | Permanent |     8000.00 |        NULL |
+|                 8 |             8 | Permanent |     5500.00 |        NULL |
+|                 9 |             9 | Permanent |     6200.00 |        NULL |
+|                11 |            11 | Permanent |     7500.00 |        NULL |
+|                12 |            12 | Permanent |     8500.00 |        NULL |
+|                14 |            14 | Permanent |     7200.00 |        NULL |
+|                16 |            16 | Permanent |     9000.00 |        NULL |
++-------------------+---------------+-----------+-------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from employment_less_than_10;
++-------------------+---------------+-----------+-------------+-------------+
+| EmploymentType_ID | Employment_ID | Type      | Extra_Bonus | Extra_Hours |
++-------------------+---------------+-----------+-------------+-------------+
+|                 1 |             1 | Permanent |     5000.00 |        NULL |
+|                 2 |             2 | Part-time |        NULL |          20 |
+|                 3 |             3 | Permanent |     6000.00 |        NULL |
+|                 4 |             4 | Part-time |        NULL |          15 |
+|                 5 |             5 | Permanent |     7000.00 |        NULL |
+|                 6 |             6 | Permanent |     8000.00 |        NULL |
+|                 7 |             7 | Part-time |        NULL |          25 |
+|                 8 |             8 | Permanent |     5500.00 |        NULL |
+|                 9 |             9 | Permanent |     6200.00 |        NULL |
++-------------------+---------------+-----------+-------------+-------------+
+
+
+
+mysql> CREATE VIEW High_Budget_Organizations AS
+    -> SELECT * FROM organization
+    -> WHERE Budget_Number > 70000;
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> CREATE VIEW Selected_Locations AS
+    -> SELECT * FROM organization
+    -> WHERE Address IN ('Maseru West', 'Roma', 'Hlotse');
+Query OK, 0 rows affected (0.01 sec)
+mysql> select * from Selected_Locations;
++--------+-------------+-------------+----------+---------------+
+| Org_ID | Name        | Address     | Phone    | Budget_Number |
++--------+-------------+-------------+----------+---------------+
+|     11 | Iketsetseng | Maseru West | 61234567 | 50000         |
+|     14 | Pele-Pele   | Roma        | 59876543 | 62000         |
+|     21 | Bohlale     | Hlotse      | 56123489 | 82000         |
++--------+-------------+-------------+----------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from high_budget_organizations;
++--------+---------+--------------+----------+---------------+
+| Org_ID | Name    | Address      | Phone    | Budget_Number |
++--------+---------+--------------+----------+---------------+
+|     12 | Katleho | Ha Tsolo     | 65432109 | 75000         |
+|     15 | Bophelo | Ha Leqele    | 57512345 | 90000         |
+|     16 | Leseli  | Mafeteng     | 66123456 | 85000         |
+|     17 | Tshepo  | Teyateyaneng | 68345678 | 71000         |
+|     21 | Bohlale | Hlotse       | 56123489 | 82000         |
+|     22 | Lerato  | Mokhotlong   | 57765432 | 90000         |
+|     26 | Ntsu    | Ha Ramokoena | 57412345 | 71000         |
++--------+---------+--------------+----------+---------------+
+
+
+mysql> CREATE VIEW Older_Than_1995 AS
+    -> SELECT * FROM person
+    -> WHERE Birth_Date < '1995-01-01';
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> CREATE VIEW Hlotse_Maputsoe_Residents AS
+    -> SELECT * FROM person
+    -> WHERE Address LIKE 'Hlotse%' OR Address LIKE 'Maputsoe%';
+Query OK, 0 rows affected (0.01 sec)
+mysql> select * from older_than_1995;
++-----------+--------+---------------+----------+------------+
+| Person_ID | Name   | Address       | Phone    | Birth_Date |
++-----------+--------+---------------+----------+------------+
+|         2 | Palesa | Maputsoe350   | 56567890 | 1992-02-20 |
+|         4 | Mokopu | Moselimyane16 | 56123456 | 1991-04-30 |
+|         8 | Bokang | Mokhotlong7   | 57512345 | 1993-08-20 |
+|        11 | Lesedi | Matala Lane12 | 59876543 | 1994-11-12 |
+|        12 | Molefi | Berea3        | 55223344 | 1990-12-08 |
++-----------+--------+---------------+----------+------------+
+5 rows in set (0.01 sec)
+
+mysql> select * from hlotse_maputsoe_residents;
++-----------+-----------+-------------+----------+------------+
+| Person_ID | Name      | Address     | Phone    | Birth_Date |
++-----------+-----------+-------------+----------+------------+
+|         1 | Mothibeli | Hlotse310   | 56341234 | 1995-01-15 |
+|         2 | Palesa    | Maputsoe350 | 56567890 | 1992-02-20 |
+|        16 | Kelebone  | Hlotse345   | 58234589 | 1996-06-30 |
++-----------+-----------+-------------+----------+------------+
+3 rows in set (0.00 sec)
+
+TRIGGERS
+
+mysql> DELIMITER $$
+mysql>
+mysql> CREATE TRIGGER delete_employees_on_position_delete
+    -> AFTER DELETE ON position
+    -> FOR EACH ROW
+    -> BEGIN
+    ->     DELETE FROM employee WHERE Position_ID = OLD.Position_ID;
+    -> END$$
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> DELIMITER $$
+mysql>
+mysql> CREATE TRIGGER delete_employment_on_position_delete
+    -> AFTER DELETE ON position
+    -> FOR EACH ROW
+    -> BEGIN
+    ->     DELETE FROM employment WHERE Position_ID = OLD.Position_ID; -- Assuming there's a Position_ID in employment table
+    -> END$$
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> SHOW TRIGGERS;
++--------------------------------------+--------+----------+----------------------------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| Trigger                              | Event  | Table    | Statement                                                                  | Timing | Created                | sql_mode                                                                                                              | Definer        | character_set_client | collation_connection | Database Collation |
++--------------------------------------+--------+----------+----------------------------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| delete_employees_on_position_delete  | DELETE | position | BEGIN
+    DELETE FROM employee WHERE Position_ID = OLD.Position_ID;
+END    | AFTER  | 2025-03-08 20:06:26.01 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | root@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| delete_employment_on_position_delete | DELETE | position | BEGIN
+    DELETE FROM employment WHERE Position_ID = OLD.Position_ID;
+END | AFTER  | 2025-03-08 20:28:07.25 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | root@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++--------------------------------------+--------+----------+----------------------------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+
+
+| before_organization_update           | UPDATE | organization | BEGIN
+    INSERT INTO organization_update_log (
+        Org_ID,
+        Old_Name,
+        New_Name,
+        Old_Address,
+        New_Address,
+        Old_Phone,
+        New_Phone,
+        Old_Budget_Number,
+        New_Budget_Number
+    )
+    VALUES (
+        OLD.Org_ID,
+        OLD.Name,
+        NEW.Name,
+        OLD.Address,
+        NEW.Address,
+        OLD.Phone,
+        NEW.Phone,
+        OLD.Budget_Number,
+        NEW.Budget_Number
+    );
+END | BEFORE | 2025-03-08 20:55:51.04 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | root@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| before_person_update                 | UPDATE | person       | BEGIN
+    INSERT INTO person_update_log (Person_ID, Old_Phone, New_Phone, Old_Address, New_Address)
+    VALUES (OLD.Person_ID, OLD.Phone, NEW.Phone, OLD.Address, NEW.Address);
+END                                             
+
+mysql> select * from organization_update_log;
+Empty set (0.04 sec)
+
+mysql> UPDATE organization
+    -> SET Name = 'Updated Name', Address = 'Updated Address', Phone = '12345678', Budget_Number = 100000
+    -> WHERE Org_ID = 11;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM organization_update_log;
++--------+--------+-------------+--------------+-------------+-----------------+-----------+-----------+-------------------+-------------------+---------------------+
+| Log_ID | Org_ID | Old_Name    | New_Name     | Old_Address | New_Address     | Old_Phone | New_Phone | Old_Budget_Number | New_Budget_Number | Change_Time         |
++--------+--------+-------------+--------------+-------------+-----------------+-----------+-----------+-------------------+-------------------+---------------------+
+|      1 |     11 | Iketsetseng | Updated Name | Maseru West | Updated Address | 61234567  | 12345678  |             50000 |            100000 | 2025-03-08 20:58:52 |
++--------+--------+-------------+--------------+-------------+-----------------+-----------+-----------+-------------------+-------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from person_update_log;
+Empty set (0.00 sec)
+
+mysql> UPDATE person
+    -> SET Phone = '57700000', Address = 'New Address'
+    -> WHERE Person_ID = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM person_update_log;
++--------+-----------+-----------+-----------+-------------+-------------+---------------------+
+| Log_ID | Person_ID | Old_Phone | New_Phone | Old_Address | New_Address | Change_Time         |
++--------+-----------+-----------+-----------+-------------+-------------+---------------------+
+|      1 |         1 | 56341234  | 57700000  | Hlotse310   | New Address | 2025-03-08 21:00:24 |
++--------+-----------+-----------+-----------+-------------+-------------+---------------------+
+1 row in set (0.00 sec)
+
+
+mysql> select * from employment_type_log;
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+| Log_ID | EmploymentType_ID | Employment_ID | Type      | Extra_Bonus | Extra_Hours | Action | Created_At          |
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+|      1 |                18 |            15 | Temporary |     3000.00 |          10 | INSERT | 2025-03-08 21:30:54 |
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO employment_type (Employment_ID, Type, Extra_Bonus, Extra_Hours) VALUES (14, 'permanent', 3000.00, 10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from employment_type_log;
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+| Log_ID | EmploymentType_ID | Employment_ID | Type      | Extra_Bonus | Extra_Hours | Action | Created_At          |
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+|      1 |                18 |            15 | Temporary |     3000.00 |          10 | INSERT | 2025-03-08 21:30:54 |
+|      2 |                19 |            14 | permanent |     3000.00 |          10 | INSERT | 2025-03-08 21:32:39 |
++--------+-------------------+---------------+-----------+-------------+-------------+--------+---------------------+
+
+FUNCTIONS
+
+mysql> CREATE FUNCTION GetPersonInfo(p_Person_ID INT)
+    -> RETURNS VARCHAR(255)
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE personInfo VARCHAR(255);
+    ->
+    ->     SELECT CONCAT('Name: ', Name, ', Address: ', Address, ', Phone: ', Phone, ', Birth Date: ', Birth_Date)
+    ->     INTO personInfo
+    ->     FROM person
+    ->     WHERE Person_ID = p_Person_ID;
+    ->
+    ->     IF personInfo IS NULL THEN
+    ->         RETURN 'No person found with the given ID.';
+    ->     END IF;
+    ->
+    ->     RETURN personInfo;
+    -> END;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> DELIMITER //
+mysql>
+mysql> CREATE FUNCTION CalculateAge(p_Person_ID INT)
+    -> RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE age INT;
+    ->
+    ->     SELECT TIMESTAMPDIFF(YEAR, Birth_Date, CURDATE())
+    ->     INTO age
+    ->     FROM person
+    ->     WHERE Person_ID = p_Person_ID;
+    ->
+    ->     IF age IS NULL THEN
+    ->         RETURN -1;  -- Return -1 if no person is found
+    ->     END IF;
+    ->
+    ->     RETURN age;
+    -> END;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> SELECT GetPersonInfo(1);
++--------------------------------------------------------------------------------+
+| GetPersonInfo(1)                                                               |
++--------------------------------------------------------------------------------+
+| Name: Mothibeli, Address: New Address, Phone: 57700000, Birth Date: 1995-01-15 |
++--------------------------------------------------------------------------------+
+1 row in set (0.02 sec)
+
+mysql> SELECT CalculateAge(1);
++-----------------+
+| CalculateAge(1) |
++-----------------+
+|              30 |
++-----------------+
+1 row in set (0.01 sec)
+
+
+PROCEDURES
+mysql> CREATE PROCEDURE SoftDeletePerson(
+    ->     p_Person_ID INT
+    -> )
+    -> BEGIN
+    ->     UPDATE person
+    ->     SET IsActive = FALSE
+    ->     WHERE Person_ID = p_Person_ID;
+    -> END //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> CALL SoftDeletePerson(3);
+Query OK, 1 row affected (0.01 sec)
+mysql> SELECT * FROM person WHERE Person_ID = 3;
++-----------+---------+------------+----------+------------+----------+
+| Person_ID | Name    | Address    | Phone    | Birth_Date | IsActive |
++-----------+---------+------------+----------+------------+----------+
+|         3 | Thabang | Hleoheng18 | 58234567 | 1998-03-10 |        0 |
++-----------+---------+------------+----------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql> CREATE PROCEDURE GetPersonWithAge(
+    ->     IN p_Person_ID INT
+    -> )
+    -> BEGIN
+    ->     DECLARE personAge INT;
+    ->
+    ->     -- Calculate age based on Birth_Date
+    ->     SELECT
+    ->         FLOOR(DATEDIFF(CURDATE(), Birth_Date) / 365) INTO personAge
+    ->     FROM
+    ->         person
+    ->     WHERE
+    ->         Person_ID = p_Person_ID;
+    ->
+    ->     -- Retrieve person details along with calculated age
+    ->     SELECT
+    ->         p.Person_ID,
+    ->         p.Name,
+    ->         p.Address,
+    ->         p.Phone,
+    ->         p.Birth_Date,
+    ->         p.IsActive,
+    ->         personAge AS Age
+    ->     FROM
+    ->         person p
+    ->     WHERE
+    ->         p.Person_ID = p_Person_ID;
+    -> END //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> CALL GetPersonWithAge(2);
++-----------+--------+-------------+----------+------------+----------+------+
+| Person_ID | Name   | Address     | Phone    | Birth_Date | IsActive | Age  |
++-----------+--------+-------------+----------+------------+----------+------+
+|         2 | Palesa | Maputsoe350 | 56567890 | 1992-02-20 |        1 |   33 |
++-----------+--------+-------------+----------+------------+----------+------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+PRIVILEGES
+
+mysql> CREATE USER 'Mothibeli'@'localhost' IDENTIFIED BY '123456';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> GRANT SELECT, INSERT ON my_database.* TO 'Mothibeli'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE USER 'Mosito'@'localhost' IDENTIFIED BY '123456';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> GRANT UPDATE, DELETE ON my_database.* TO 'Mosito'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> UPDATE position SET Title = 'Updated Mookameli' WHERE Position_ID = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM position WHERE Position_ID = 1;
++-------------+-------------------+--------+
+| Position_ID | Title             | Org_ID |
++-------------+-------------------+--------+
+|           1 | Updated Mookameli |     11 |
++-------------+-------------------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from position;
++-------------+------------------------+--------+
+| Position_ID | Title                  | Org_ID |
++-------------+------------------------+--------+
+|           1 | Updated Mookameli      |     11 |
+|           2 | Motlatsi Mookameli     |     12 |
+|           3 | Motsamaisi             |     13 |
+|           4 | Mothusi                |     14 |
+|           5 | Setsebi sa Lichelete   |     15 |
+|           6 | Mohlahlobi             |     16 |
+|           7 | Setsebi sa Marangrang  |     17 |
+|           8 | Motsamaisi oa Morero   |     18 |
+|           9 | Setsebi sa Thekenoloji |     19 |
+|          10 | Mofani oa Lit?ebeletso |     20 |
+|          11 | Moqapi oa Software     |     21 |
+|          12 | Mokhanni               |     22 |
+|          13 | Mohlokomeli            |     23 |
+|          14 | Tsebi ea Lipapali      |     24 |
+|          15 | Motataisi              |     25 |
+|          16 | Moetsi oa Litheo       |     26 |
++-------------+------------------------+--------+
+16 rows in set (0.00 sec)
+
+
+
